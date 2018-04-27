@@ -1,4 +1,4 @@
-package com.example.hystrix;
+package com.example.hystrixdashboard;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConsumerController {
 
-    @Autowired
-    HelloRemote HelloRemote;
+   @Autowired
+    HelloRemote helloRemote;
 
     @RequestMapping("/hello/{name}")
     public String index(@PathVariable("name") String name) {
         System.out.println(name);
-        return HelloRemote.hello(name);
+        return helloRemote.hello(name);
     }
 
 }
